@@ -16,6 +16,9 @@ while cap.isOpened():
     if not ret:
         break
 
+    # Mirror the frame
+    frame = cv2.flip(frame, 1)
+
     # Process frame for person and gesture detection
     person_detected = people_detector.detect(frame)
     hands_data = gesture_detector.detect(frame)
